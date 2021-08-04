@@ -22,7 +22,6 @@ class App extends Component {
         SimpleStorageContract.abi,
         deployedNetwork && deployedNetwork.address,
       );
-
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
       this.setState({ web3, accounts, contract: instance }, this.runExample);
@@ -36,8 +35,7 @@ class App extends Component {
   };
 
   runExample = async () => {
-    const { accounts, contract } = this.state;
-
+    const { contract } = this.state;
     // Get the value from the contract to prove it worked.
     const response = await contract.methods.get().call();
 
